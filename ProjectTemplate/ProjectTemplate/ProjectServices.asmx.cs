@@ -21,7 +21,7 @@ namespace ProjectTemplate
 		////////////////////////////////////////////////////////////////////////
 		private string dbID = "springa2023team6";
 		private string dbPass = "springa2023team6";
-		private string dbName = "employee";
+		private string dbName = "springa2023team6";
 		////////////////////////////////////////////////////////////////////////
 		
 		////////////////////////////////////////////////////////////////////////
@@ -41,7 +41,7 @@ namespace ProjectTemplate
 		{
 			try
 			{
-				string testQuery = "select * from test";
+				string testQuery = "select * from employee";
 
 				////////////////////////////////////////////////////////////////////////
 				///here's an example of using the getConString method!
