@@ -32,8 +32,6 @@ namespace ProjectTemplate
 		}
 		////////////////////////////////////////////////////////////////////////
 
-
-
 		/////////////////////////////////////////////////////////////////////////
 		//don't forget to include this decoration above each method that you want
 		//to be exposed as a web service!
@@ -61,6 +59,11 @@ namespace ProjectTemplate
 			{
 				return "Something went wrong, please check your credentials and db name and try again.  Error: "+e.Message;
 			}
+		}
+		[WebMethod]
+		public int doubleNum(int baseNumber)
+		{
+			return baseNumber * 2; 
 		}
 	}
 }
