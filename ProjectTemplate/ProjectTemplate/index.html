@@ -10,10 +10,10 @@
 	<script type="text/javascript">
 		function TestButtonHandler() {
 			// initialize vars you need to send at the start of the function
-			empCount = document.getElementById("counter").value;
+			empCountValue = document.getElementById("countInput").value;
 			
 			var webMethod = "ProjectServices.asmx/getEmployees";
-			var parameters = "{\"employeeCount\":\"" + encodeURI(empCount) + "\"}"; // This is the way that we give a k,v pair in, whichj 
+			var parameters = "{\"empCount\":\"" + encodeURI(empCountValue) + "\"}"; // This is the way that we give a k,v pair in, whichj 
 
 			//jQuery ajax method
 			$.ajax({
@@ -32,7 +32,7 @@
 				}
 				},
 				error: function (e) {
-					alert("this code will only execute if javascript is unable to access the webservice");
+					alert("this code will only execute if javascript is unable to access the webservice!");
 				}
 			});
 		}
@@ -44,8 +44,8 @@
 
 	</style>
 	<!--END OF YOUR OWN CSS-->
-</head >
+</head>
 <body>
-	<input id="count"type="text"/> <button onclick="javascript: TestButtonHandler();">click here to test your connection"</button>
+	<input id="countInput"type="text"> <button onclick="javascript: TestButtonHandler();">click here to test your connection!</button>
 </body>
-</html >
+</html>
