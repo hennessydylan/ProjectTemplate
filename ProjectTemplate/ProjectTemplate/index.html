@@ -9,8 +9,11 @@
 	<!--YOUR OWN JAVASCRIPT CAN GO RIGHT HERE-->
 	<script type="text/javascript">
 		function TestButtonHandler() {
-			var webMethod = "ProjectServices.asmx/TestConnection";
-			var parameters = "{}";
+			// initialize vars you need to send at the start of the function
+			empCountValue = document.getElementById("empCountInput").value;
+
+			var webMethod = "ProjectServices.asmx/getEmployees";
+			var parameters = "{\"employeeCount\":\"" + encodeURI(UserCountValue) + "\"}";
 
 			//jQuery ajax method
 			$.ajax({
@@ -20,8 +23,12 @@
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function (msg) {
+
+					for (var i = 0;)
 					var responseFromServer = msg.d;
-					alert(responseFromServer);
+					alert(responseFromServer.firstName);
+					alert(responseFromServer.lastName);
+                    alert(responseFromServer.phoneNumber);
 				},
 				error: function (e) {
 					alert("this code will only execute if javascript is unable to access the webservice");
@@ -39,5 +46,7 @@
 </head >
 <body>
 	<button onclick="javascript: TestButtonHandler();">Click here to test connection!</button>
+	<input id="empCountInput"type="text"/> <button onclick="javascript: TestButtonHandler();">"
+	click here to test your connection"</button>
 </body>
 </html >

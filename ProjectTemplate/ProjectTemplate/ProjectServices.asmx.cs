@@ -23,12 +23,13 @@ namespace ProjectTemplate
 		private string dbPass = "springa2023team6";
 		private string dbName = "springa2023team6";
 		////////////////////////////////////////////////////////////////////////
-		
+
 		////////////////////////////////////////////////////////////////////////
 		///call this method anywhere that you need the connection string!
 		////////////////////////////////////////////////////////////////////////
-		private string getConString() {
-			return "SERVER=107.180.1.16; PORT=3306; DATABASE=" + dbName+"; UID=" + dbID + "; PASSWORD=" + dbPass;
+		private string getConString()
+		{
+			return "SERVER=107.180.1.16; PORT=3306; DATABASE=" + dbName + "; UID=" + dbID + "; PASSWORD=" + dbPass;
 		}
 		////////////////////////////////////////////////////////////////////////
 
@@ -57,14 +58,28 @@ namespace ProjectTemplate
 			}
 			catch (Exception e)
 			{
-				return "Something went wrong, please check your credentials and db name and try again.  Error: "+e.Message;
+				return "Something went wrong, please check your credentials and db name and try again.  Error: " + e.Message;
 			}
 		}
 		[WebMethod]
-		public int doubleNum(int baseNumber)
+		public int DoubleNum(int baseNumber)
 		{
-		return baseNumber * 10;
-
+			return baseNumber * 10;
+		}
+		[WebMethod]
+		public Employee[] GetEmployees(Int16 empCount)
+		{
+			List<Employee> employees = new List<Employee>();
+			for (int i = 0; i < empCount; i++)
+			{
+				Employee emp = new Employee();
+				emp.firstName = "Dylan";
+				emp.lastName = "Henny";
+				emp.phoneNumber = 9146469614;
+				employees.Add(emp);
+			}
+			return employees.ToArray();
 		}
 	}
 }
+	
