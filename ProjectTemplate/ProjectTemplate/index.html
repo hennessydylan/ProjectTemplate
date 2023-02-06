@@ -11,9 +11,9 @@
 		function TestButtonHandler() {
 			// initialize vars you need to send at the start of the function
 			empCountValue = document.getElementById("empCountInput").value;
-
+			
 			var webMethod = "ProjectServices.asmx/getEmployees";
-			var parameters = "{\"employeeCount\":\"" + encodeURI(UserCountValue) + "\"}";
+			var parameters = "{\"employeeCount\":\"" + encodeURI(empßCountValue) + "\"}"; // This is the way that we give a k,v pair in, whichj 
 
 			//jQuery ajax method
 			$.ajax({
