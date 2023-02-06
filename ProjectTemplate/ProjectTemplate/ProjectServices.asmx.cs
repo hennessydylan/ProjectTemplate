@@ -63,7 +63,8 @@ namespace ProjectTemplate
 		[WebMethod]
 		public int doubleNum(int baseNumber)
 		{
-			return baseNumber * 2; 
+		return baseNumber * 10;
+
 		}
 	}
 }
